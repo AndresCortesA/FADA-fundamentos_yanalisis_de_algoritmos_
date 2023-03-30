@@ -2,13 +2,24 @@ public class Main {
 
     //sin optimizar
     public static double problema1(long n){
+        long contador = 0;
+
+        contador++;
         long s = 0;
+        contador++;
+
+
         for(long i = 2*n; i >= 0; i--){
-            for (long j=i; j >= 0; j--){
-                s ++;
+            contador++;
+            for(long j = i; j >= 0; j--){
+                contador++;
+                s++;
+                contador++;
             }
+            contador++;
         }
-        return s;
+        contador++;
+        return contador;
     }
     /*
     * valor optimo (2n+1)(n+1)
@@ -39,13 +50,12 @@ public class Main {
         return (valor1+(2*valor2))/4;
     }
     public static void main(String[] args) {
-        long[] arr = {2, 4,6,8,10,20,40};
-
-        for(long valor:arr) {
+        long[] arr1 = {0,2, 4,6,8,10,20,40};
+        for(long valor:arr1) {
             System.out.println(valor + " " + problema1(valor) + " " + problema1_1(valor));
         }
         System.out.println("*************************************** problemas ****************************");
-        for(long valor:arr){
+        for(long valor:arr1){
             System.out.println(valor+" "+problema2(valor) + " " + problema2_1(valor));
         }
     }
