@@ -3,8 +3,6 @@ public class Main {
     //sin optimizar
     public static double problema1(long n){
         long contador = 0;
-
-        contador++;
         long s = 0;
         contador++;
 
@@ -25,29 +23,42 @@ public class Main {
     * valor optimo (2n+1)(n+1)
     * 2n^2+3n+1
     * */
-    public static double problema1_1(long n){
-        return (2*(n*n) + 3*n + 1);
+    public static double  problema1_1(long n){
+        long linea1 = 1;
+        long linea2 = 2*n+2;
+        long linea3 = 2*n*(2*n+1)/2 + 4*n + 2;
+        long linea4 = 2*n*(2*n+1)/2 + 2*n + 1;
+        return linea1+linea2+linea3+linea4;
     }
 
     //sin optimizar
     public static double problema2(long n){
+        long cnt = 0;
         int t = 0;
-        for(long i = 0; i <= n*n; i+=2){
-            for (long j=1; j <= i; j++){
-                t ++;
-            }
-        }
 
-        return t;
+        cnt++;
+        for(long i = 0; i <= n*n; i+=2){
+            cnt++;
+            for (long j=1; j <= i; j++){
+                cnt++;
+                t ++;
+                cnt++;
+            }
+            cnt++;
+        }
+        cnt++;
+        return cnt;
     }
 
     /*
     valor optimo (n^4+2n^2)/4
     * */
     public static double problema2_1(long n){
-        double valor1 = Math.pow(n,4);
-        double valor2 = Math.pow(n,2);
-        return (valor1+(2*valor2))/4;
+        long linea1 = 1;
+        long linea2 = n*n/2+2;
+        long linea3 = (n*n/2+1)*(n*n/2+1);
+        long linea4 = (n*n/2+1)*(n*n/2+1)-(n*n/2+1);
+        return linea1+linea2+linea3+linea4;
     }
     public static void main(String[] args) {
         long[] arr1 = {0,2, 4,6,8,10,20,40};
