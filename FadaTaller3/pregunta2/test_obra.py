@@ -22,14 +22,23 @@ class InventarioTests(unittest.TestCase):
         self.inventario.agregarReplica("El hombre de Vitrubio")
         self.inventario.agregarReplica("Persistencia de la memoria")
 
+        
         self.inventario.venderReplica("El hombre de Vitrubio")
         self.assertEqual(self.inventario.cabeza.obra.cantidad, 1)
         
         # Se supone que aqui se debe devolver None pero devuelve 1 y se va a un error, no entiendo que más hacemos
         #Agradezco alguna corrección o retroalimentacion de esta parte  vender replicas, no devuelve el mensaje o hace
-        # lo que se pide, o no sabemos si estas pruebas esten mal
+        # lo que se pide, o no sabemos si estas pruebas esten mal (Ya funciono, se nos olvido la condición de devolver un string)
+        import sys
+        from io import StringIO
+        captured_output = StringIO()
+        sys.stdout = captured_output
+        
+        
         self.inventario.venderReplica("El hombre de Vitrubio")
-        self.assertIsNone(self.inventario.cabeza)
+        sys.stdout = sys.__stdout__
+        expected_output = "No hay obras disponibles con el nombre especificado."
+        self.assertEqual(captured_output.getvalue().strip(), expected_output)
         
         self.inventario.venderReplica("Persistencia de la memoria")
         self.assertIsNone(self.inventario.cabeza)

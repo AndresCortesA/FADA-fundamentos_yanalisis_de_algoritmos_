@@ -41,7 +41,7 @@ class Inventario:
             return
 
         nodo_actual = self.cabeza
-        while nodo_actual.siguiente is not None:
+        while nodo_actual is not None and nodo_actual.siguiente is not None:
             if nodo_actual.siguiente.obra.nombre == nombre:
                 if nodo_actual.siguiente.obra.cantidad > 1:
                     nodo_actual.siguiente.obra.cantidad -= 1
@@ -51,6 +51,7 @@ class Inventario:
             nodo_actual = nodo_actual.siguiente
 
         print("No hay obras disponibles con el nombre especificado.")
+
 
 
 
