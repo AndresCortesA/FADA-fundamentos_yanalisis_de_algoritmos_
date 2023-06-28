@@ -2,6 +2,14 @@ import unittest
 
 from obra import Inventario
 
+"""
+Taller 3 FADA
+
+Andrés Mauricio Arias Cortes
+Maher Lopez Rodriguez
+Santiago Marin Lozano
+"""
+
 class InventarioTests(unittest.TestCase):
     def setUp(self):
         self.inventario = Inventario()

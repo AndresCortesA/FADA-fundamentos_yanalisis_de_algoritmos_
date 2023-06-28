@@ -2,6 +2,15 @@ import unittest
 
 from pilasColas import PilaConColas
 
+
+"""
+Taller 3 FADA
+
+Andrés Mauricio Arias Cortes
+Maher Lopez Rodriguez
+Santiago Marin Lozano
+"""
+
 class PilaConColasTests(unittest.TestCase):
     def setUp(self):
         self.pila = PilaConColas()

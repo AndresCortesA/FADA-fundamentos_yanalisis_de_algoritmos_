@@ -1,5 +1,14 @@
 from queue import Queue
 
+
+"""
+Taller 3 FADA
+
+Andrés Mauricio Arias Cortes
+Maher Lopez Rodriguez
+Santiago Marin Lozano
+"""
+
 class PilaConColas:
     def __init__(self):
         self.cola = Queue()

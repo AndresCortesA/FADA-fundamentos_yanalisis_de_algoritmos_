@@ -1,3 +1,12 @@
+"""
+Taller 3 FADA
+
+Andrés Mauricio Arias Cortes
+Maher Lopez Rodriguez
+Santiago Marin Lozano
+"""
+
+
 class Obra:
     def __init__(self, nombre, cantidad):
         self.nombre = nombre
